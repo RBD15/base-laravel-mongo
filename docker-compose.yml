@@ -1,0 +1,17 @@
+version: '3.5'
+
+services:
+  mongo:
+    image: mongo:6
+    container_name: mongo-laravel
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: password
+      MONGO_INITDB_DATABASE: laravel-mongo
+    ports:
+      - 27018:27017
+    volumes:
+      - './mongodb-local:/data/db'
+
+
